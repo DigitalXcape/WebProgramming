@@ -11,6 +11,15 @@ class FunctionLibrary {
         return form;
     }
 
+    //Create a submit button with ID
+    static createSubmitButton(text='submit', id=''){
+            const button = document.createElement('button');
+            button.type = 'submit';
+            button.textContent = text;
+            button.id = id;
+        return button;
+    }
+
     //Creates and adds a form field to the specified element
     static addFormField(form, element) {
         if (form && element) {
@@ -45,7 +54,7 @@ class FunctionLibrary {
     }
 
     //Creates radial buttons
-    static createRadialButton(name, options = []) {
+    static createRadialButtons(name, options = []) {
         const container = document.createElement('div');
 
         options.forEach(optionValue => {
@@ -54,6 +63,7 @@ class FunctionLibrary {
             input.type = 'radio';
             input.name = name;
             input.value = optionValue;
+            input.required = true;
             label.textContent = optionValue;
             label.appendChild(input);
             container.appendChild(label);
@@ -144,4 +154,44 @@ class FunctionLibrary {
         // Format the date as MM/DD/YYYY
         return `${month}/${day}/${year}`;
     }
+
+    // Static method to send form data
+    static submitForm(formElement, endpoint, method = 'POST') {
+        // Create a FormData object from the form element
+        const formData = new FormData(formElement);
+    
+        // Return a promise for handling asynchronous behavior
+        return fetch(endpoint, {
+          method: method,
+          body: formData,
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          AjaxHelper.showSuccessMessage('Form submitted successfully!', data);
+        })
+        .catch(error => {
+          AjaxHelper.showErrorMessage('Error submitting form: ' + error.message);
+        });
+      }
+    
+      // Static method to display success messages
+      static showSuccessMessage(message, data) {
+        const successElement = document.createElement('div');
+        successElement.className = 'success-message';
+        successElement.textContent = `${message} - Response: ${JSON.stringify(data)}`;
+        document.body.appendChild(successElement);
+      }
+    
+      // Static method to display error messages
+      static showErrorMessage(message) {
+        const errorElement = document.createElement('div');
+        errorElement.className = 'error-message';
+        errorElement.textContent = message;
+        document.body.appendChild(errorElement);
+      }
 }

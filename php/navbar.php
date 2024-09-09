@@ -1,15 +1,20 @@
 <?php
+
+//DO NOT FORGET THE BOOSTRAP LINK
+
 // Define an array of navigation items
 $navItems = [
-    'Home' => 'index.php',
-    'Create User' => 'view/userForm.php',
+    'Home' => '../view/index.php',
+    'Library Test' => '../view/libraryTest.php',
+    'Create User Form' => '../view/userForm.php'  
 ];
 
-// Function to generate the navigation bar
+// Function to generate the navigation bar with Bootstrap classes
 function generateNavBar($items) {
-    echo '<nav><ul>';
+    echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">';
+    echo '<ul class="navbar-nav mr-auto">';
     foreach ($items as $name => $url) {
-        echo "<li><a href='$url'>$name</a></li>";
+        echo "<li class='nav-item'><a class='nav-link' href='$url'>$name</a></li>";
     }
     echo '</ul></nav>';
 }
