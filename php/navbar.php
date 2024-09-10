@@ -6,7 +6,8 @@
 $navItems = [
     'Home' => '../view/index.php',
     'Library Test' => '../view/libraryTest.php',
-    'Create User Form' => '../view/userForm.php'  
+    'Create User Form' => '../view/userForm.php',
+    'User List' => '../view/userList.php'    
 ];
 
 // Function to generate the navigation bar with Bootstrap classes
