@@ -10,7 +10,7 @@ class Controller {
 
     public function showData() {
         $data = $this->model->getData();
-        require '../view/userList.php';
+        include '../view/userList.php'; // Use include to include the view file
     }
 }
 ?>

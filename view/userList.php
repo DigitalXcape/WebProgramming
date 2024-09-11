@@ -10,13 +10,11 @@
 require_once '../controller/userController.php';
 
 $controller = new Controller();
-$controller->showData();
+$data = $controller->showData(); // Assuming showData() returns the data
 
-foreach ($controller.$data as $item) {
+foreach ($data as $item) {
     echo "<p>{$item['column_name']}</p>";
 }
 ?>
-
-
 </body>
 </html>
