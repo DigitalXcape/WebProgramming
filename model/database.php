@@ -1,14 +1,22 @@
 <?php
 class Database {
+    private static $instance = null;
     private $conn;
 
-    public function __construct($dsn, $username, $password) {
+    private function __construct($dsn, $username, $password) {
         try {
             $this->conn = new PDO($dsn, $username, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
+            die("Connection failed: " . $e->getMessage());
         }
+    }
+
+    public static function getInstance() {
+        if (self::$instance === null) {
+            self::$instance = new Database('mysql:host=localhost;dbname=db_users', 'root', '');
+        }
+        return self::$instance;
     }
 
     public function getData() {
@@ -17,17 +25,17 @@ class Database {
                 $stmt = $this->conn->query("SELECT * FROM users");
                 return $stmt->fetchAll(PDO::FETCH_ASSOC);
             } catch (PDOException $e) {
-                echo "Query failed: " . $e->getMessage();
+                error_log("Query failed: " . $e->getMessage());
                 return [];
             }
         } else {
-            echo "No connection.";
+            error_log("No connection.");
             return [];
         }
     }
 
     public function __destruct() {
-        $this->conn = null; // Ensure the connection is closed
+        $this->conn = null;
     }
 }
 ?>

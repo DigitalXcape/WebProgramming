@@ -9,11 +9,11 @@
 <?php
 require_once '../controller/userController.php';
 
-$controller = new Controller();
-$data = $controller->showData(); // Assuming showData() returns the data
+$controller = new UserController();
+$data = $controller->showData();
 
 foreach ($data as $item) {
-    echo "<p>{$item['column_name']}</p>";
+    echo "<p>{$item['username']}</p>";
 }
 ?>
 </body>
