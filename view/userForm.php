@@ -27,7 +27,6 @@
             throw new Exception("Getting ID failed (is it null?)");
         }
 
-
         if ($userID !== null && !empty($userID)) {
             $user = $controller->model->getUserById($userID);
             if ($user) {
@@ -47,19 +46,24 @@
 
     <div class="container mt-5">
         <h2>Edit User Form</h2>
-        <form>
+        <form action="../controller/editUserController.php" method="POST">
+            <input type="hidden" name="userId" value="<?php echo htmlspecialchars($userID); ?>">
+
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter username" value="<?php echo $username; ?>" required>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" value="<?php echo htmlspecialchars($username); ?>" required>
             </div>
+
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" value="<?php echo $email; ?>" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" value="<?php echo htmlspecialchars($email); ?>" required>
             </div>
+
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter password" value="<?php echo $password; ?>" required>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" value="<?php echo htmlspecialchars($password); ?>" required>
             </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

@@ -101,5 +101,35 @@ class UserModel {
             return false;
         }
     }
+
+    public function updateUser($userId, $userName, $email, $password) {
+        if ($this->conn) {
+            try {
+                $stmt = $this->conn->prepare("
+                    UPDATE users 
+                    SET UserName = :userName, Email = :email, Password = :password
+                    WHERE UserID = :userId
+                ");
+                $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+                $stmt->bindParam(':userName', $userName, PDO::PARAM_STR);
+                $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+                $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+    
+                $stmt->execute();
+                
+                if ($stmt->rowCount() > 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (PDOException $e) {
+                error_log("Update failed: " . $e->getMessage());
+                return false;
+            }
+        } else {
+            error_log("No connection.");
+            return false;
+        }
+    }
 }
 ?>
