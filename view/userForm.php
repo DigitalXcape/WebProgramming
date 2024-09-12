@@ -11,35 +11,57 @@
 <body>
     <?php generateNavBar($navItems); ?>
 
-    <div class="container my-5">
-        <div id="formContainer" class="p-4 border rounded bg-light"></div>
+    <?php
+    require_once '../controller/UserController.php';
+
+    $email = $username = $password = '';
+
+    try {
+        $controller = new UserController();
+
+        $userID = null;
+        if (isset($_GET['UserID'])) {
+            $userID = $_GET['UserID'];
+            echo "<p>User ID is: " . htmlspecialchars($userID) . "</p>";
+        } else {
+            throw new Exception("Getting ID failed (is it null?)");
+        }
+
+
+        if ($userID !== null && !empty($userID)) {
+            $user = $controller->model->getUserById($userID);
+            if ($user) {
+                $email = $user->getEmail();
+                $username = $user->getUsername();
+                $password = $user->getPassword();
+            } else {
+                echo "<p>User not found.</p>";
+            }
+        } else {
+            echo "<p>Invalid User ID.</p>";
+        }
+    } catch (Exception $e) {
+        echo "<p>Error: " . $e->getMessage() . "</p>";
+    }
+    ?>
+
+    <div class="container mt-5">
+        <h2>Edit User Form</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username" value="<?php echo $username; ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" value="<?php echo $email; ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" value="<?php echo $password; ?>" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
-
-    <script>
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const form = FunctionLibrary.createForm('formContainer');
-        form.classList.add('form-group'); // Add Bootstrap class to the form container
-
-        const emailInput = FunctionLibrary.createEmailInput('useremail', 'Enter your email');
-            emailInput.classList.add('form-control', 'mb-3'); // Add Bootstrap classes to email input
-            emailInput.id = 'email';
-            FunctionLibrary.addFormField(form, emailInput);
-
-        const passwordInput = FunctionLibrary.createTextInput('password', 'Password')
-        FunctionLibrary.validatePasswordField(passwordInput);
-        passwordInput.classList.add('form-control', 'mb-3'); // Add Bootstrap classes to password input
-        passwordInput.id = 'password';
-        FunctionLibrary.addFormField(form, passwordInput);
-
-        const submitButton = FunctionLibrary.createSubmitButton('Submit Form!', "");
-            submitButton.classList.add('btn', 'btn-primary');
-            FunctionLibrary.addFormField(form, submitButton);
-
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-              });
-    });
-    </script>
 </body>
 </html>

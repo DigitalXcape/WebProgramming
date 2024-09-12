@@ -1,4 +1,6 @@
 <?php
+
+
 class User {
     // Properties (private fields)
     private $username;
@@ -10,6 +12,13 @@ class User {
         $this->setUsername($username);
         $this->setEmail($email);
         $this->setPassword($password);
+    }
+
+    // Constructor to initialize the object from database data
+    public function __constructFromData($username, $email, $password) {
+        $this->username = $username;
+        $this->email = $email;
+        $this->password = $password;
     }
 
     // Getter for username
@@ -34,12 +43,7 @@ class User {
 
     // Setter for email
     public function setEmail($email) {
-        // Basic email validation
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $this->email = $email;
-        } else {
-            throw new Exception("Invalid email format.");
-        }
+        $this->email = $email;
     }
 
     // Getter for password (Note: typically, you shouldn't have a getter for passwords)
@@ -47,13 +51,36 @@ class User {
         return $this->password;
     }
 
-    // Setter for password
     public function setPassword($password) {
-        // You can add password strength validation here
-        if (strlen($password) >= 6) {
-            $this->password = password_hash($password, PASSWORD_BCRYPT); // Hashing the password
+        // Define regex patterns for validation
+        $lengthPattern = '/^.{8,20}$/';
+        $numberPattern = '/[0-9]/';
+        $lowercasePattern = '/[a-z]/';
+        $uppercasePattern = '/[A-Z]/';
+    
+        // Initialize an array to hold the validation errors
+        $requirements = [];
+    
+        // Check if the password meets all the requirements
+        if (!preg_match($lengthPattern, $password)) {
+            $requirements[] = "Password must be between 8 and 20 characters long.";
+        }
+        if (!preg_match($numberPattern, $password)) {
+            $requirements[] = "Password must contain at least one number.";
+        }
+        if (!preg_match($lowercasePattern, $password)) {
+            $requirements[] = "Password must contain at least one lowercase letter.";
+        }
+        if (!preg_match($uppercasePattern, $password)) {
+            $requirements[] = "Password must contain at least one uppercase letter.";
+        }
+    
+        // Throw an exception if there are validation errors
+        if (count($requirements) > 0) {
+            throw new Exception(implode("\n", $requirements));
         } else {
-            throw new Exception("Password must be at least 6 characters long.");
+            // Hash the password and set it if validation is successful
+            $this->password = $password;
         }
     }
 
