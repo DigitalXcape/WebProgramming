@@ -1,5 +1,4 @@
-class Verification{
-
+class Verification {
     static validatePasswordField(inputElement) {
         inputElement.addEventListener('input', () => {
             const password = inputElement.value;
@@ -94,28 +93,21 @@ class Verification{
     }
 }
 
-//Auto add Event Listeners
-
-//Password
+// Auto-add Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     const passwordInput = document.getElementById('password');
-    if (passwordInput) {
-        FunctionLibrary.validatePasswordField(passwordInput);
-    }
-});
-
-//Username
-document.addEventListener('DOMContentLoaded', () => {
     const usernameInput = document.getElementById('username');
-    if (usernameInput) {
-        FunctionLibrary.validateUsernameField(usernameInput);
-    }
-});
-
-//Email
-document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('email');
+
+    if (passwordInput) {
+        Verification.validatePasswordField(passwordInput);
+    }
+
+    if (usernameInput) {
+        Verification.validateUsernameField(usernameInput);
+    }
+
     if (emailInput) {
-        FunctionLibrary.validateEmailField(emailInput);
+        Verification.validateEmailField(emailInput);
     }
 });
