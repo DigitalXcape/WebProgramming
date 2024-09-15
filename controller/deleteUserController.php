@@ -1,5 +1,5 @@
 <?php
-require_once '../model/UserModel.php';
+require_once '../autoLoader.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['UserID'])) {
     $userID = $_POST['UserID'];

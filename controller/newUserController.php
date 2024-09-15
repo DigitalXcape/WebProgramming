@@ -1,5 +1,5 @@
 <?php
-require_once '../autoLoader.php';
+require_once '../model/UserModel.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userID = $_POST['userId'];
@@ -10,13 +10,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $model = UserModel::getInstance();
 
-        $success = $model->updateUser($userID, $username, $email, $password);
+        $success = $model->addUser($username, $email, $password);
 
         if ($success) {
-            echo "User updated successfully!";
+            echo "User created successfully!";
 
         } else {
-            echo "Failed to update user.";
+            echo "Failed to create user.";
         }
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();

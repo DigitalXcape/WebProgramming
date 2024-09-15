@@ -1,15 +1,19 @@
 <?php
 require_once '../classes/user.php';
+require_once '../logger/Logger.php';
 
 class UserModel {
     private static $instance = null;
     private $conn;
+    private $logger;
 
     private function __construct($dsn, $username, $password) {
         try {
             $this->conn = new PDO($dsn, $username, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->logger = Logger::getInstance();
         } catch (PDOException $e) {
+            $this->logger->log("Connection failed: " . $e->getMessage());
             die("Connection failed: " . $e->getMessage());
         }
     }
@@ -27,11 +31,11 @@ class UserModel {
                 $stmt = $this->conn->query("SELECT * FROM users");
                 return $stmt->fetchAll(PDO::FETCH_ASSOC);
             } catch (PDOException $e) {
-                error_log("Query failed: " . $e->getMessage());
+                $this->logger->log("Query failed: " . $e->getMessage());
                 return [];
             }
         } else {
-            error_log("No connection.");
+            $this->logger->log("No connection.");
             return [];
         }
     }
@@ -41,16 +45,15 @@ class UserModel {
     }
 
     public function getUsers() {
-
         $data = $this->getData();
         $userList = [];
         
         foreach ($data as $item) {
             $userList[] = $item['UserName'];
         }
-    
+
         return $userList;
-        }
+    }
 
     public function getUserById($userId) {
         if ($this->conn) {
@@ -61,7 +64,6 @@ class UserModel {
                 $result = $stmt->fetch(PDO::FETCH_ASSOC);
                 
                 if ($result) {
-                    // Create and return a User object
                     return new User(
                         $result['UserName'],
                         $result['Email'],
@@ -71,11 +73,11 @@ class UserModel {
                     return null;
                 }
             } catch (PDOException $e) {
-                error_log("Query failed: " . $e->getMessage());
+                $this->logger->log("Query failed: " . $e->getMessage());
                 return null;
             }
         } else {
-            error_log("No connection.");
+            $this->logger->log("No connection.");
             return null;
         }
     }
@@ -88,16 +90,17 @@ class UserModel {
                 $stmt->execute();
                 
                 if ($stmt->rowCount() > 0) {
+                    $this->logger->log('User of ID: ' . $userId . ' Deleted');  
                     return true;
                 } else {
                     return false;
                 }
             } catch (PDOException $e) {
-                error_log("Delete failed: " . $e->getMessage());
+                $this->logger->log("Delete failed: " . $e->getMessage());
                 return false;
             }
         } else {
-            error_log("No connection.");
+            $this->logger->log("No connection.");
             return false;
         }
     }
@@ -118,16 +121,46 @@ class UserModel {
                 $stmt->execute();
                 
                 if ($stmt->rowCount() > 0) {
+                    $this->logger->log('User ' . $userName . ' Updated Successfully');  
                     return true;
                 } else {
                     return false;
                 }
             } catch (PDOException $e) {
-                error_log("Update failed: " . $e->getMessage());
+                $this->logger->log("Update failed: " . $e->getMessage());
                 return false;
             }
         } else {
-            error_log("No connection.");
+            $this->logger->log("No connection.");
+            return false;
+        }
+    }
+
+    public function addUser($userName, $email, $password) {
+        if ($this->conn) {
+            try {
+                $stmt = $this->conn->prepare("
+                    INSERT INTO users (UserName, Email, Password)
+                    VALUES (:userName, :email, :password)
+                ");
+                $stmt->bindParam(':userName', $userName, PDO::PARAM_STR);
+                $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+                $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+    
+                $stmt->execute();
+    
+                if ($stmt->rowCount() > 0) {
+                    $this->logger->log('User ' . $userName . ' Added Successfully');                    
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (PDOException $e) {
+                $this->logger->log("Insert failed: " . $e->getMessage());
+                return false;
+            }
+        } else {
+            $this->logger->log("No connection.");
             return false;
         }
     }

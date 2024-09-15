@@ -1,5 +1,5 @@
 <?php
-require_once '../model/UserModel.php';
+require_once '../autoLoader.php';
 
 class UserController {
     public $model;

@@ -33,7 +33,8 @@ $data = $controller->showData();
             <div class="col-4">
                 <a href="userForm.php?UserID=<?php echo urlencode($item['UserID']); ?>" class="btn btn-primary btn-sm">Edit</a>
                 
-                <form action="../controller/deleteUserController.php" method="POST" style="display:inline;">
+                <form action="../controller/deleteUserController.php" method="POST" style="display:inline;"
+                onsubmit="return confirm('Are you sure you want to delete this user?');">
                     <input type="hidden" name="UserID" value="<?php echo htmlspecialchars($item['UserID']); ?>">
                     <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                 </form>

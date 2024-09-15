@@ -196,42 +196,5 @@ class FunctionLibrary {
         document.body.appendChild(errorElement);
       }
 
-      static validatePasswordField(inputElement) {
-        inputElement.addEventListener('input', () => {
-            const password = inputElement.value;
-
-            // Define regex patterns for validation
-            const lengthPattern = /^.{8,20}$/;
-            const numberPattern = /[0-9]/;
-            const lowercasePattern = /[a-z]/;
-            const uppercasePattern = /[A-Z]/;
-
-            // Initialize an array to hold the requirements
-            let requirements = [];
-
-            // Check if the password meets all the requirements
-            if (!lengthPattern.test(password)) {
-                requirements.push("- Password must be between 8 and 20 characters long.");
-            }
-            if (!numberPattern.test(password)) {
-                requirements.push("- Password must contain at least one number.");
-            }
-            if (!lowercasePattern.test(password)) {
-                requirements.push("- Password must contain at least one lowercase letter.");
-            }
-            if (!uppercasePattern.test(password)) {
-                requirements.push("- Password must contain at least one uppercase letter.");
-            }
-
-            // Set the custom validity message based on the requirements
-            if (requirements.length === 0) {
-                inputElement.setCustomValidity(""); // Clear any previous error message
-            } else {
-                inputElement.setCustomValidity(requirements.join("\n"));
-            }
-
-            // Trigger the browser's validation UI
-            inputElement.reportValidity();
-        });
-    }
+      
 }
