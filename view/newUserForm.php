@@ -6,6 +6,7 @@
     <script src="../library/VerificationLibrary.js" defer></script>
     <?php include '../php/navbar.php'; ?>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Sign Up</title>
 </head>
 <body>

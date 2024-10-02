@@ -1,7 +1,82 @@
-[2024-09-13 06:07:47] User admin Added Successfully
-[2024-09-15 17:05:38] User Kody Weigel Added Successfully
-[2024-09-15 17:06:00] User of ID: 21 Deleted
-[2024-09-15 17:07:58] User ff Added Successfully
-[2024-09-15 17:08:00] User of ID: 22 Deleted
-[2024-09-15 17:11:07] User admin Added Successfully
-[2024-09-15 17:11:13] User of ID: 23 Deleted
+[2024-09-25 04:12:49] foyer, upstairs
+[2024-09-25 04:12:53] Cookies cleared.
+[2024-09-25 04:13:01] foyer
+[2024-09-25 04:13:02] Cookies cleared.
+[2024-09-25 04:13:03] foyer
+[2024-09-25 04:13:04] foyer, upstairs
+[2024-09-25 04:13:05] foyer, upstairs, masterbedroom
+[2024-09-25 04:13:05] Cookies cleared.
+[2024-09-25 04:13:17] foyer
+[2024-09-25 04:13:19] foyer, upstairs
+[2024-09-25 04:13:21] foyer, upstairs, upstairs
+[2024-09-25 04:13:22] No changes made to StoryPage for user 27
+[2024-09-25 04:13:22] Failed to save story progress for user OR page data was the same27
+[2024-09-25 04:13:24] StoryPage for user 27 retrieved: foyer
+[2024-09-25 04:13:27] Cookies cleared.
+[2024-09-25 04:13:28] Cookies cleared.
+[2024-10-02 01:45:30] StoryPage for user 27 retrieved: foyer
+[2024-10-02 01:45:31] No story page provided in the POST request.
+[2024-10-02 01:45:36] No story page provided in the POST request.
+[2024-10-02 01:45:39] No story page provided in the POST request.
+[2024-10-02 01:45:40] foyer
+[2024-10-02 01:45:42] Cookies cleared.
+[2024-10-02 01:45:43] foyer
+[2024-10-02 01:45:43] No story page provided in the POST request.
+[2024-10-02 01:45:48] foyer, foyer
+[2024-10-02 01:46:03] No story page provided in the POST request.
+[2024-10-02 01:46:06] No story page provided in the POST request.
+[2024-10-02 01:46:07] No story page provided in the POST request.
+[2024-10-02 01:46:07] No story page provided in the POST request.
+[2024-10-02 01:46:08] foyer, foyer, foyer
+[2024-10-02 01:46:10] foyer, foyer, foyer, upstairs
+[2024-10-02 01:46:11] No story page provided in the POST request.
+[2024-10-02 01:49:09] StoryPage for user 27 updated to: upstairs
+[2024-10-02 01:49:09] User 27 story progress saved at page: upstairs
+[2024-10-02 01:49:10] StoryPage for user 27 retrieved: upstairs
+[2024-10-02 01:49:14] foyer, foyer, foyer, upstairs, masterbedroom
+[2024-10-02 01:49:14] Cookies cleared.
+[2024-10-02 01:49:15] StoryPage for user 27 updated to: outside
+[2024-10-02 01:49:15] User 27 story progress saved at page: outside
+[2024-10-02 01:49:16] StoryPage for user 27 retrieved: outside
+[2024-10-02 02:23:12] StoryPage for user 27 retrieved: outside
+[2024-10-02 02:23:13] foyer
+[2024-10-02 02:23:35] foyer, upstairs
+[2024-10-02 02:23:39] foyer, upstairs, masterbedroom
+[2024-10-02 02:27:17] foyer, upstairs, masterbedroom, masterbedroom
+[2024-10-02 02:27:20] foyer, upstairs, masterbedroom, masterbedroom, closet
+[2024-10-02 02:27:21] foyer, upstairs, masterbedroom, masterbedroom, closet, basement
+[2024-10-02 02:27:45] StoryPage for user 27 updated to: closet
+[2024-10-02 02:27:45] User 27 story progress saved at page: closet
+[2024-10-02 02:27:46] StoryPage for user 27 retrieved: closet
+[2024-10-02 02:27:50] foyer, upstairs, masterbedroom
+[2024-10-02 02:27:52] foyer, upstairs, masterbedroom
+[2024-10-02 02:27:54] Cookies cleared.
+[2024-10-02 02:27:55] Cookies cleared.
+[2024-10-02 02:27:56] foyer
+[2024-10-02 02:27:57] foyer, diningroom
+[2024-10-02 02:27:59] foyer, diningroom, kitchen
+[2024-10-02 02:28:01] foyer, diningroom, kitchen, ghost
+[2024-10-02 02:28:03] foyer, diningroom, kitchen, ghost, escaped
+[2024-10-02 02:28:09] foyer, parlor
+[2024-10-02 02:28:11] foyer, parlor, backdoor
+[2024-10-02 02:28:13] foyer, parlor, backdoor, dock
+[2024-10-02 02:28:14] foyer, parlor, backdoor, dock, drowning
+[2024-10-02 02:28:16] StoryPage for user 27 updated to: drowning
+[2024-10-02 02:28:16] User 27 story progress saved at page: drowning
+[2024-10-02 02:28:17] StoryPage for user 27 retrieved: drowning
+[2024-10-02 02:28:18] foyer, parlor, backdoor, dock, drowning
+[2024-10-02 02:28:22] Cookies cleared.
+[2024-10-02 02:28:25] foyer
+[2024-10-02 02:28:33] foyer, upstairs
+[2024-10-02 02:28:34] foyer, upstairs, masterbedroom
+[2024-10-02 02:28:39] foyer, upstairs, masterbedroom, masterbedroom
+[2024-10-02 02:28:41] foyer, upstairs, masterbedroom, masterbedroom, masterbedroom
+[2024-10-02 02:28:57] foyer, upstairs, masterbedroom, masterbedroom, masterbedroom, storageroom
+[2024-10-02 02:28:59] foyer, upstairs, masterbedroom, masterbedroom, masterbedroom, storageroom, kicthen
+[2024-10-02 02:28:59] Cookies cleared.
+[2024-10-02 02:29:15] foyer
+[2024-10-02 02:29:16] foyer, upstairs
+[2024-10-02 02:29:17] foyer, upstairs, storageroom
+[2024-10-02 02:29:17] foyer, upstairs, storageroom, kitchen
+[2024-10-02 02:29:19] foyer, upstairs, storageroom, kitchen, ghost
+[2024-10-02 02:29:20] foyer, upstairs, storageroom, kitchen, ghost, escaped

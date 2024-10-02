@@ -1,24 +1,17 @@
 <?php
-
-
 class User {
     // Properties (private fields)
     private $username;
     private $email;
     private $password;
+    private $id;
 
     // Constructor to initialize the object
-    public function __construct($username, $email, $password) {
+    public function __construct($username, $email, $password, $id) {
         $this->setUsername($username);
         $this->setEmail($email);
         $this->setPassword($password);
-    }
-
-    // Constructor to initialize the object from database data
-    public function __constructFromData($username, $email, $password) {
-        $this->username = $username;
-        $this->email = $email;
-        $this->password = $password;
+        $this->setId($id);
     }
 
     // Getter for username
@@ -34,6 +27,21 @@ class User {
         } else {
             throw new Exception("Username cannot be empty.");
         }
+    }
+
+    // Setter for username
+    public function setId($id) {
+        // You can add validation for username here
+        if (!empty($id)) {
+            $this->id = $id;
+        } else {
+            throw new Exception("Id cannot be empty.");
+        }
+    }
+
+    // Getter for email
+    public function getId() {
+        return $this->id;
     }
 
     // Getter for email
