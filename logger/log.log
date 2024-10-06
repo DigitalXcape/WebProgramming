@@ -80,3 +80,23 @@
 [2024-10-02 02:29:17] foyer, upstairs, storageroom, kitchen
 [2024-10-02 02:29:19] foyer, upstairs, storageroom, kitchen, ghost
 [2024-10-02 02:29:20] foyer, upstairs, storageroom, kitchen, ghost, escaped
+[2024-10-07 01:01:43] User of ID: 27 Deleted
+[2024-10-07 01:02:04] User KodyWeigel Added Successfully
+[2024-10-07 01:02:19] User: KodyWeigel was found via email
+[2024-10-07 01:02:24] StoryPage for user 28 retrieved: 
+[2024-10-07 01:02:28] foyer
+[2024-10-07 01:02:31] foyer, upstairs
+[2024-10-07 01:02:33] foyer, upstairs, masterbedroom
+[2024-10-07 01:02:36] foyer, upstairs, masterbedroom, closet
+[2024-10-07 01:02:39] Cookies cleared.
+[2024-10-07 01:02:40] foyer
+[2024-10-07 01:02:41] foyer, diningroom
+[2024-10-07 01:02:42] foyer, diningroom, kitchen
+[2024-10-07 01:02:43] foyer, diningroom, kitchen, ghost
+[2024-10-07 01:02:45] foyer, diningroom, kitchen, ghost, escaped
+[2024-10-07 01:02:49] StoryPage for user 28 updated to: escaped
+[2024-10-07 01:02:49] User 28 story progress saved at page: escaped
+[2024-10-07 01:02:53] StoryPage for user 28 retrieved: escaped
+[2024-10-07 01:02:57] StoryPage for user 28 updated to: kitchen
+[2024-10-07 01:02:57] User 28 story progress saved at page: kitchen
+[2024-10-07 01:02:57] StoryPage for user 28 retrieved: kitchen

@@ -13,7 +13,6 @@ class UserModel {
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->logger = Logger::getInstance();
         } catch (PDOException $e) {
-            $this->logger->log("Connection failed: " . $e->getMessage());
             die("Connection failed: " . $e->getMessage());
         }
     }
