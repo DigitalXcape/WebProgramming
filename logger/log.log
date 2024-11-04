@@ -1,11 +1,3 @@
-[2024-11-04 02:05:47] Attempting to log in with email: kodypweigel@gmail.com
-[2024-11-04 02:05:48] API Response: {"success":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwidXNlcm5hbWUiOiJLb2R5V2VpZ2VsIiwicm9sZSI6InVzZXIiLCJleHAiOjE3MzA2ODU5NDh9.jwuTtzoh08OLafNJ376sZLx9HgkLSdxrYA3TM0Y8mx0","username":"KodyWeigel","user_id":28,"role":"user"}
-[2024-11-04 02:05:48] Login successful for email: kodypweigel@gmail.com
-[2024-11-04 02:14:46] Attempting to log in with email: admin@gmail.com
-[2024-11-04 02:14:47] API Response: {"success":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNCwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTczMDY4NjQ4Nn0.gV1SKaRv1ii8ygz27ToSjj-_aHNDN2PsgKqDPJpQud8","username":"admin","user_id":34,"role":"admin"}
-[2024-11-04 02:14:47] Login successful for email: admin@gmail.com
-[2024-11-04 02:20:46] Attempting to create user with email: t@gmail.com
-[2024-11-04 02:20:47] API Response: {"success":false,"message":"Invalid email or password"}
-[2024-11-04 02:20:47] User creation failed for email: t@gmail.com - Message: Invalid email or password
-[2024-11-04 02:24:01] Attempting to create user with email: t@gmail.com
-[2024-11-04 02:24:01] User created successfully with email: t@gmail.com
+[2024-11-04 17:20:40] Attempting to log in with email: kodypweigel@gmail.com
+[2024-11-04 17:20:40] API Response: {"success":false,"message":"Invalid email or password","token":null}
+[2024-11-04 17:20:40] Login failed for email: kodypweigel@gmail.com - Message: Invalid email or password
