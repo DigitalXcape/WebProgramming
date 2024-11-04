@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id'])) {
 $userId = $_SESSION['user_id'];
 
 // API URL for fetching the story page
-$apiUrl = 'http://localhost/UserManagement/controller/getStoryPage.php';
+$apiUrl = 'http://localhost/UserManagementAPI/controller/getStoryPage.php';
 $postData = http_build_query(['userId' => $userId]);
 
 // Initialize cURL

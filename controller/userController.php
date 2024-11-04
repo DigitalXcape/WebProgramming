@@ -14,7 +14,7 @@ class UserController {
 
     // Retrieve the list of users from the API
     public function getUsers() {
-        $apiUrl = 'http://localhost/UserManagement/controller/getUsers.php';
+        $apiUrl = 'http://localhost/UserManagementAPI/controller/getUsers.php';
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $apiUrl);
@@ -41,7 +41,7 @@ class UserController {
 
     // Delete a user by sending a request to the deleteUser API endpoint
     public function deleteUser($userId) {
-        $apiUrl = 'http://localhost/UserManagement/controller/deleteUser.php';
+        $apiUrl = 'http://localhost/UserManagementAPI/controller/deleteUser.php';
 
         $postData = http_build_query(['userId' => $userId]);
 

@@ -3,7 +3,7 @@ session_start();
 require_once '../logger/Logger.php';
 
 // Define the API endpoint for creating a user
-define('CREATE_USER_API_URL', 'http://localhost/UserManagement/controller/createUser.php');
+define('CREATE_USER_API_URL', 'http://localhost/UserManagementAPI/controller/createUser.php');
 
 $responseMessage = '';
 

@@ -25,7 +25,7 @@ class SaveStoryController {
                 $storyPage = htmlspecialchars(trim($_POST['saveStory']));
 
                 // Call the API to save story progress
-                $apiUrl = 'http://localhost/UserManagement/controller/saveStory.php';
+                $apiUrl = 'http://localhost/UserManagementAPI/controller/saveStory.php';
                 $postData = http_build_query(['userId' => $userId, 'storyPage' => $storyPage]);
 
                 $ch = curl_init();

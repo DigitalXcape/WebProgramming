@@ -27,7 +27,7 @@
     // Function to fetch user data
     async function fetchUsers() {
         try {
-            const response = await fetch('http://localhost/UserManagement/service/userManagementService.php?action=getUsers');
+            const response = await fetch('http://localhost/UserManagementAPI/service/userManagementService.php?action=getUsers');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }

@@ -1,6 +1,6 @@
 <?php
 require_once '../logger/Logger.php';
-define('USER_MANAGEMENT_API_URL', 'http://localhost/UserManagement/service/userManagementService.php');
+define('USER_MANAGEMENT_API_URL', 'http://localhost/UserManagementAPI/service/userManagementService.php');
 
 // Start a session to manage user data if needed
 session_start();

@@ -2,7 +2,7 @@
 session_start();
 require_once '../logger/Logger.php';
 
-define('EDIT_USER_API_URL', 'http://localhost/UserManagement/service/userManagementService.php'); // Update to the service URL
+define('EDIT_USER_API_URL', 'http://localhost/UserManagementAPI/service/userManagementService.php'); // Update to the service URL
 
 $responseMessage = '';
 
