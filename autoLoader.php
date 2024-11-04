@@ -9,6 +9,8 @@
         } else {
             echo "Class file for $className not found!";
         }
+
+        $baseDir = __DIR__ . '/model/';
     }
     
     spl_autoload_register('Autoloader');

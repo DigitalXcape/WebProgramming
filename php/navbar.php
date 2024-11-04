@@ -2,16 +2,19 @@
 
 session_start(); // Start the session to access session variables
 
-// DO NOT FORGET THE BOOTSTRAP LINK
-
 // Define an array of navigation items
 $navItems = [
     'Home' => '../view/index.php',
     'Library Test' => '../view/libraryTest.php',
-    'User List' => '../view/userList.php',
+    // 'User List' will be conditionally added based on user role
     'Create New User' => '../view/newUserForm.php',
     'Story Game' => '../view/story.php'
 ];
+
+// Check if the user has the 'admin' or 'moderator' role and add the User List link if they do
+if (isset($_SESSION['role']) && in_array($_SESSION['role'], ['admin', 'moderator'])) {
+    $navItems['User List'] = '../view/userList.php';
+}
 
 // Function to generate the navigation bar with Bootstrap classes
 function generateNavBar($items) {
@@ -34,7 +37,7 @@ function generateNavBar($items) {
         echo "<li class='nav-item dropdown'>";
         echo "<a class='nav-link dropdown-toggle' href='#' id='userDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>$username</a>";
         echo '<ul class="dropdown-menu" aria-labelledby="userDropdown">';
-        echo '<li><a class="dropdown-item" href="../controller/logoutController.php">Logout</a></li>'; // Logout link to logoutController.php
+        echo '<li><a class="dropdown-item" href="../controller/logoutController.php">Logout</a></li>';
         echo '</ul>';
         echo '</li>';
         echo '</ul>';
@@ -49,4 +52,3 @@ function generateNavBar($items) {
     echo '</div>'; // Close container-fluid div
     echo '</nav>';
 }
-?>

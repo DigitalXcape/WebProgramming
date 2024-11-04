@@ -12,37 +12,56 @@
 <body>
 <?php generateNavBar($navItems); ?>
 
-<?php
-require_once '../controller/userController.php';
-
-$controller = new UserController();
-$data = $controller->showData();
-?>
-
 <div class="container mt-5">
     <h1>Users</h1>
-    <div class="row font-weight-bold">
+    <div id="userList" class="row font-weight-bold">
         <div class="col-4">Username</div>
-        <div class="col-4">Password</div>
+        <div class="col-4">Email</div>
         <div class="col-4">Actions</div>
     </div>
     <hr>
-    <?php foreach ($data as $item): ?>
-        <div class="row">
-            <div class="col-4"><?php echo htmlspecialchars($item['UserName']); ?></div>
-            <div class="col-4"><?php echo htmlspecialchars($item['Password']); ?></div>
-            <div class="col-4">
-                <a href="userForm.php?UserID=<?php echo urlencode($item['UserID']); ?>" class="btn btn-primary btn-sm">Edit</a>
-                
-                <form action="../controller/deleteUserController.php" method="POST" style="display:inline;"
-                onsubmit="return confirm('Are you sure you want to delete this user?');">
-                    <input type="hidden" name="UserID" value="<?php echo htmlspecialchars($item['UserID']); ?>">
-                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                </form>
-            </div>
-        </div>
-    <?php endforeach; ?>
+    <div id="userData"></div> <!-- This will hold the user data fetched from the API -->
 </div>
+
+<script>
+    // Function to fetch user data
+    async function fetchUsers() {
+        try {
+            const response = await fetch('http://localhost/UserManagement/service/userManagementService.php?action=getUsers');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+
+            // Build user list
+            const userDataDiv = document.getElementById('userData');
+            userDataDiv.innerHTML = ''; // Clear any existing content
+            data.forEach(user => {
+                userDataDiv.innerHTML += `
+                    <div class="row">
+                        <div class="col-4">${user.UserName}</div>
+                        <div class="col-4">${user.Email}</div>
+                        <div class="col-4">
+                            <a href="userForm.php?UserID=${user.UserID}" class="btn btn-primary btn-sm">Edit</a>
+                            <form action="../controller/deleteUserController.php" method="POST" style="display:inline;" 
+                                  onsubmit="return confirm('Are you sure you want to delete this user?');">
+                                <input type="hidden" name="userId" value="${user.UserID}">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                    <hr>
+                `;
+            });
+        } catch (error) {
+            console.error('Error fetching users:', error);
+            document.getElementById('userData').innerHTML = '<p class="text-danger">Failed to load user data.</p>';
+        }
+    }
+
+    // Fetch users on page load
+    document.addEventListener('DOMContentLoaded', fetchUsers);
+</script>
 
 </body>
 </html>

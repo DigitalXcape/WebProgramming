@@ -1,102 +1,11 @@
-[2024-09-25 04:12:49] foyer, upstairs
-[2024-09-25 04:12:53] Cookies cleared.
-[2024-09-25 04:13:01] foyer
-[2024-09-25 04:13:02] Cookies cleared.
-[2024-09-25 04:13:03] foyer
-[2024-09-25 04:13:04] foyer, upstairs
-[2024-09-25 04:13:05] foyer, upstairs, masterbedroom
-[2024-09-25 04:13:05] Cookies cleared.
-[2024-09-25 04:13:17] foyer
-[2024-09-25 04:13:19] foyer, upstairs
-[2024-09-25 04:13:21] foyer, upstairs, upstairs
-[2024-09-25 04:13:22] No changes made to StoryPage for user 27
-[2024-09-25 04:13:22] Failed to save story progress for user OR page data was the same27
-[2024-09-25 04:13:24] StoryPage for user 27 retrieved: foyer
-[2024-09-25 04:13:27] Cookies cleared.
-[2024-09-25 04:13:28] Cookies cleared.
-[2024-10-02 01:45:30] StoryPage for user 27 retrieved: foyer
-[2024-10-02 01:45:31] No story page provided in the POST request.
-[2024-10-02 01:45:36] No story page provided in the POST request.
-[2024-10-02 01:45:39] No story page provided in the POST request.
-[2024-10-02 01:45:40] foyer
-[2024-10-02 01:45:42] Cookies cleared.
-[2024-10-02 01:45:43] foyer
-[2024-10-02 01:45:43] No story page provided in the POST request.
-[2024-10-02 01:45:48] foyer, foyer
-[2024-10-02 01:46:03] No story page provided in the POST request.
-[2024-10-02 01:46:06] No story page provided in the POST request.
-[2024-10-02 01:46:07] No story page provided in the POST request.
-[2024-10-02 01:46:07] No story page provided in the POST request.
-[2024-10-02 01:46:08] foyer, foyer, foyer
-[2024-10-02 01:46:10] foyer, foyer, foyer, upstairs
-[2024-10-02 01:46:11] No story page provided in the POST request.
-[2024-10-02 01:49:09] StoryPage for user 27 updated to: upstairs
-[2024-10-02 01:49:09] User 27 story progress saved at page: upstairs
-[2024-10-02 01:49:10] StoryPage for user 27 retrieved: upstairs
-[2024-10-02 01:49:14] foyer, foyer, foyer, upstairs, masterbedroom
-[2024-10-02 01:49:14] Cookies cleared.
-[2024-10-02 01:49:15] StoryPage for user 27 updated to: outside
-[2024-10-02 01:49:15] User 27 story progress saved at page: outside
-[2024-10-02 01:49:16] StoryPage for user 27 retrieved: outside
-[2024-10-02 02:23:12] StoryPage for user 27 retrieved: outside
-[2024-10-02 02:23:13] foyer
-[2024-10-02 02:23:35] foyer, upstairs
-[2024-10-02 02:23:39] foyer, upstairs, masterbedroom
-[2024-10-02 02:27:17] foyer, upstairs, masterbedroom, masterbedroom
-[2024-10-02 02:27:20] foyer, upstairs, masterbedroom, masterbedroom, closet
-[2024-10-02 02:27:21] foyer, upstairs, masterbedroom, masterbedroom, closet, basement
-[2024-10-02 02:27:45] StoryPage for user 27 updated to: closet
-[2024-10-02 02:27:45] User 27 story progress saved at page: closet
-[2024-10-02 02:27:46] StoryPage for user 27 retrieved: closet
-[2024-10-02 02:27:50] foyer, upstairs, masterbedroom
-[2024-10-02 02:27:52] foyer, upstairs, masterbedroom
-[2024-10-02 02:27:54] Cookies cleared.
-[2024-10-02 02:27:55] Cookies cleared.
-[2024-10-02 02:27:56] foyer
-[2024-10-02 02:27:57] foyer, diningroom
-[2024-10-02 02:27:59] foyer, diningroom, kitchen
-[2024-10-02 02:28:01] foyer, diningroom, kitchen, ghost
-[2024-10-02 02:28:03] foyer, diningroom, kitchen, ghost, escaped
-[2024-10-02 02:28:09] foyer, parlor
-[2024-10-02 02:28:11] foyer, parlor, backdoor
-[2024-10-02 02:28:13] foyer, parlor, backdoor, dock
-[2024-10-02 02:28:14] foyer, parlor, backdoor, dock, drowning
-[2024-10-02 02:28:16] StoryPage for user 27 updated to: drowning
-[2024-10-02 02:28:16] User 27 story progress saved at page: drowning
-[2024-10-02 02:28:17] StoryPage for user 27 retrieved: drowning
-[2024-10-02 02:28:18] foyer, parlor, backdoor, dock, drowning
-[2024-10-02 02:28:22] Cookies cleared.
-[2024-10-02 02:28:25] foyer
-[2024-10-02 02:28:33] foyer, upstairs
-[2024-10-02 02:28:34] foyer, upstairs, masterbedroom
-[2024-10-02 02:28:39] foyer, upstairs, masterbedroom, masterbedroom
-[2024-10-02 02:28:41] foyer, upstairs, masterbedroom, masterbedroom, masterbedroom
-[2024-10-02 02:28:57] foyer, upstairs, masterbedroom, masterbedroom, masterbedroom, storageroom
-[2024-10-02 02:28:59] foyer, upstairs, masterbedroom, masterbedroom, masterbedroom, storageroom, kicthen
-[2024-10-02 02:28:59] Cookies cleared.
-[2024-10-02 02:29:15] foyer
-[2024-10-02 02:29:16] foyer, upstairs
-[2024-10-02 02:29:17] foyer, upstairs, storageroom
-[2024-10-02 02:29:17] foyer, upstairs, storageroom, kitchen
-[2024-10-02 02:29:19] foyer, upstairs, storageroom, kitchen, ghost
-[2024-10-02 02:29:20] foyer, upstairs, storageroom, kitchen, ghost, escaped
-[2024-10-07 01:01:43] User of ID: 27 Deleted
-[2024-10-07 01:02:04] User KodyWeigel Added Successfully
-[2024-10-07 01:02:19] User: KodyWeigel was found via email
-[2024-10-07 01:02:24] StoryPage for user 28 retrieved: 
-[2024-10-07 01:02:28] foyer
-[2024-10-07 01:02:31] foyer, upstairs
-[2024-10-07 01:02:33] foyer, upstairs, masterbedroom
-[2024-10-07 01:02:36] foyer, upstairs, masterbedroom, closet
-[2024-10-07 01:02:39] Cookies cleared.
-[2024-10-07 01:02:40] foyer
-[2024-10-07 01:02:41] foyer, diningroom
-[2024-10-07 01:02:42] foyer, diningroom, kitchen
-[2024-10-07 01:02:43] foyer, diningroom, kitchen, ghost
-[2024-10-07 01:02:45] foyer, diningroom, kitchen, ghost, escaped
-[2024-10-07 01:02:49] StoryPage for user 28 updated to: escaped
-[2024-10-07 01:02:49] User 28 story progress saved at page: escaped
-[2024-10-07 01:02:53] StoryPage for user 28 retrieved: escaped
-[2024-10-07 01:02:57] StoryPage for user 28 updated to: kitchen
-[2024-10-07 01:02:57] User 28 story progress saved at page: kitchen
-[2024-10-07 01:02:57] StoryPage for user 28 retrieved: kitchen
+[2024-11-04 02:05:47] Attempting to log in with email: kodypweigel@gmail.com
+[2024-11-04 02:05:48] API Response: {"success":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwidXNlcm5hbWUiOiJLb2R5V2VpZ2VsIiwicm9sZSI6InVzZXIiLCJleHAiOjE3MzA2ODU5NDh9.jwuTtzoh08OLafNJ376sZLx9HgkLSdxrYA3TM0Y8mx0","username":"KodyWeigel","user_id":28,"role":"user"}
+[2024-11-04 02:05:48] Login successful for email: kodypweigel@gmail.com
+[2024-11-04 02:14:46] Attempting to log in with email: admin@gmail.com
+[2024-11-04 02:14:47] API Response: {"success":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNCwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTczMDY4NjQ4Nn0.gV1SKaRv1ii8ygz27ToSjj-_aHNDN2PsgKqDPJpQud8","username":"admin","user_id":34,"role":"admin"}
+[2024-11-04 02:14:47] Login successful for email: admin@gmail.com
+[2024-11-04 02:20:46] Attempting to create user with email: t@gmail.com
+[2024-11-04 02:20:47] API Response: {"success":false,"message":"Invalid email or password"}
+[2024-11-04 02:20:47] User creation failed for email: t@gmail.com - Message: Invalid email or password
+[2024-11-04 02:24:01] Attempting to create user with email: t@gmail.com
+[2024-11-04 02:24:01] User created successfully with email: t@gmail.com
