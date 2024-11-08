@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2024 at 01:06 AM
+-- Generation Time: Nov 08, 2024 at 03:43 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -29,8 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `UserName` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
+  `Password` varchar(300) NOT NULL,
   `Email` varchar(100) NOT NULL,
+  `Role` enum('user','moderator','admin') NOT NULL,
   `StoryPage` varchar(30) NOT NULL,
   `UserID` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -39,8 +40,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`UserName`, `Password`, `Email`, `StoryPage`, `UserID`) VALUES
-('KodyWeigel', 'Password1', 'kodypweigel@gmail.com', 'kitchen', 28);
+INSERT INTO `users` (`UserName`, `Password`, `Email`, `Role`, `StoryPage`, `UserID`) VALUES
+('user', '$2y$10$YerXo3.7B6EMcZ.ZoKy/m.GMCH79NHWFi89MXcqA57AklGwsQrilO', 'user@gmail.com', 'user', '', 43),
+('admin', '$2y$10$ui.JDmS0tWNLDRfzeOFK0e/l4QbLqmJ4gJ4xTEaA26YR3yCIV1Xcy', 'admin@gmail.com', 'admin', '', 44);
 
 --
 -- Indexes for dumped tables
@@ -60,7 +62,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `UserID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

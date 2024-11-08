@@ -13,7 +13,7 @@
 <?php generateNavBar($navItems); ?>
     <div class="container mt-5">
         <h1 class="fs-5">Interactive Story Game</h1>
-        <p class="lead">This is a stroy about going on a walk with multiple options.</p>
+        <p class="lead">This is a story about a haunted house with multiple endings.</p>
         <form action="../controller/openStoryController.php" method="POST">
             <button type="submit" class="btn btn-primary">Click this button to go on a walk.</button>
         </form>

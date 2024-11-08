@@ -1,3 +1,12 @@
-[2024-11-04 17:20:40] Attempting to log in with email: kodypweigel@gmail.com
-[2024-11-04 17:20:40] API Response: {"success":false,"message":"Invalid email or password","token":null}
-[2024-11-04 17:20:40] Login failed for email: kodypweigel@gmail.com - Message: Invalid email or password
+[2024-11-08 03:55:49] API Response: {"success":true,"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0MywidXNlcm5hbWUiOiJ1c2VyIiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwic3RvcnlfcGFnZSI6IiIsImV4cCI6MTczMTAzODE0OX0.RriHgmu0sy-bNCSOI356uOdYPu2HC-EcVeUKYyPa4gE","username":"user","user_id":43,"role":"user"}
+[2024-11-08 03:55:49] HTTP Status Code: 200
+[2024-11-08 03:55:49] Login successful for email: user@gmail.com
+[2024-11-08 03:56:07] API Response: {"success":true,"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NCwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwic3RvcnlfcGFnZSI6IiIsImV4cCI6MTczMTAzODE2N30.uKa_IQeQM4W_rZSkCVf5ZzuCx5_JJKCbM9t4_DiGaBI","username":"admin","user_id":44,"role":"admin"}
+[2024-11-08 03:56:07] HTTP Status Code: 200
+[2024-11-08 03:56:07] Login successful for email: admin@gmail.com
+[2024-11-08 03:56:10] Fetching user list...
+[2024-11-08 03:56:10] API URL: http://localhost/UserManagementAPI/controller/getUsers.php
+[2024-11-08 03:56:11] CURL executed successfully.
+[2024-11-08 03:56:11] API Response: {"success":true,"users":[{"username":"user","email":"user@gmail.com","user_id":43,"role":"user","story_page":""},{"username":"admin","email":"admin@gmail.com","user_id":44,"role":"admin","story_page":""}],"message":"Users retrieved successfully"}
+[2024-11-08 03:56:11] User list successfully retrieved with 2 users.
+[2024-11-08 03:56:11] Finished fetching user list.

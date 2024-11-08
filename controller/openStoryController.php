@@ -4,16 +4,21 @@ require_once '../logger/Logger.php';
 session_start();
 $logger = Logger::getInstance();
 
-if (!isset($_SESSION['user_id'])) {
+// Check if the user is logged in and if the token exists
+if (!isset($_SESSION['user_id']) || !isset($_COOKIE['token'])) {
     header('Location: ../view/login.php');
     exit();
 }
 
 $userId = $_SESSION['user_id'];
+$token = $_COOKIE['token'];
 
 // API URL for fetching the story page
 $apiUrl = 'http://localhost/UserManagementAPI/controller/getStoryPage.php';
-$postData = http_build_query(['userId' => $userId]);
+$postData = http_build_query([
+    'userId' => $userId,
+    'token' => $token // Include the token in the POST data
+]);
 
 // Initialize cURL
 $ch = curl_init();
@@ -33,6 +38,9 @@ if (curl_errno($ch)) {
 curl_close($ch);
 
 $data = json_decode($apiResponse, true);
+
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$logger->log("HTTP Status Code: " . $httpCode);
 
 // Check for a valid response from the API
 if ($data['success'] && isset($data['page'])) {

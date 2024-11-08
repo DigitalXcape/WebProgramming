@@ -7,13 +7,17 @@ Make a table named db_users and put the contents from the file "db_users.sql" an
 
 After that, to access the story you need to make an account and then log in.
 
+TESTING: Two accounts are made a user and an admin, their emails are "user@gmail.com" and "admin@gmail.com". Both passwords are "Password1"
+The admin account can view the user list and delete users.
 
-FEATURES:
 
--Story with 3 endings
+NEW FEATURES:
 
--Cookies that save the history
+-Tokenizing data
 
--Save button so you can return at anytime
+-Password hashing
 
--Undo button that rolls through the history
+-Roles "admin" and "user"
+
+-Backend support (see api)
+

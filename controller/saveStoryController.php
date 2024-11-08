@@ -46,6 +46,9 @@ class SaveStoryController {
 
             // Log the raw API response for debugging
             $this->logger->log("API response: " . $apiResponse);
+            
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $logger->log("HTTP Status Code: " . $httpCode);
 
             $data = json_decode($apiResponse, true);
             if (isset($data['success']) && $data['success']) {

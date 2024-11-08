@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Logger error: " . $e->getMessage();
     }
 
-    $userId = $_POST['userId']; // Retrieve the user ID to delete
+    $userId = $_POST['user_id']; // Retrieve the user ID to delete
 
     try {
         // Log the user deletion attempt
@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Execute the request
         $apiResponse = curl_exec($ch);
+
 
         // Log any CURL errors
         if (curl_errno($ch)) {
@@ -60,6 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $logger->log("Exception caught: " . $e->getMessage());
         $responseMessage = 'An unexpected error occurred.';
     }
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $logger->log("HTTP Status Code: " . $httpCode);
 }
 
 // Display the response message or pass it to the view

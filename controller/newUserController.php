@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $logger->log("User created successfully with email: $email");
 
             // Optionally, redirect to user list or a success page
-            header('Location: ../view/userList.php');
+            header('Location: ../view/index.php');
             exit();
         } else {
             $responseMessage = $data['message'];
@@ -69,6 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $logger->log("Exception caught: " . $e->getMessage());
         $responseMessage = 'An unexpected error occurred.';
     }
+
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $logger->log("HTTP Status Code: " . $httpCode);
 }
 
 // Display the response message or pass it to the view
